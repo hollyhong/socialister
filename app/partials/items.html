@@ -1,8 +1,8 @@
 <ul ng-controller="ItemCtrl">
   <form id='item-list' ng-submit='addItem()'>
-    Item:<input id='new-item' ng-model='newItem' autofocus>
+    Item: <input id='new-item' ng-model='newItem' autofocus>
+    <p>Tags: <input ng-list ng-model='newTags'</p>
     <input class="" type="submit" value="add">
-    <p>Tags:<input ng-list ng-model='newTags'</p>
   </form>
   <li ng-repeat="item in items">
     <input ng-model='item.text'>
