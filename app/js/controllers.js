@@ -16,9 +16,11 @@ angular.module('socialister.controllers', []).
           return;
         }
         $scope.items.push({
-          text: $scope.newItem
+          text: $scope.newItem,
+          tags: $scope.newTags
         });
         $scope.newItem = '';
+        $scope.newTags = '';
       };
 
       $scope.rmItem = function (item) {
