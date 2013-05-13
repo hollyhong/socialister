@@ -11,5 +11,19 @@ angular.module('socialister.controllers', []).
       var url = 'https://wfp.firebaseio.com/items';
       var promise = angularFire(url, $scope, 'items', []);
 
+      $scope.addItem = function () {
+        if (!$scope.newItem.length) {
+          return;
+        }
+        $scope.items.push({
+          text: $scope.newItem
+        });
+        $scope.newItem = '';
+      };
+
+      $scope.rmItem = function (item) {
+        $scope.items.splice($scope.items.indexOf(item), 1);
+      };
+
     }
   ]);
