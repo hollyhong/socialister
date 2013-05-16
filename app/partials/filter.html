@@ -1,0 +1,9 @@
+<div ng-controller="FilterCtrl">
+  <ul>
+    <li ng-repeat='(tag, items) in tags'>{{tag}}
+      <ul>
+        <li ng-repeat='item in items'>{{item}}</li>
+      </ul>
+    </li>
+  </ul>
+</div>
