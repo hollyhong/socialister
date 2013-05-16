@@ -1,8 +1,9 @@
 <div ng-controller="FilterCtrl">
+  <p>Filter: <input ng-model='filterText'></p>
   <ul>
     <li ng-repeat='(tag, items) in tags'>{{tag}}
       <ul>
-        <li ng-repeat='item in items'>{{item}}</li>
+        <li ng-repeat='item in items | filter:filterText'>{{item}}</li>
       </ul>
     </li>
   </ul>
