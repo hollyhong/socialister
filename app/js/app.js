@@ -11,11 +11,11 @@ angular.module('socialister', ['firebase', 'socialister.filters', 'socialister.s
   }]);
 
 // instatiate the FirebaseAuthClient and monitor the user's auth state
-var chatRef = new Firebase('https://SampleChat.firebaseIO.com');
+var chatRef = new Firebase('https://wfp.firebaseio.com');
 var authClient = new FirebaseAuthClient(chatRef, function(error, user) {
   if (error) {
     // an error occurred while attempting login
-    alert(error);
+    //alert(error);
   } else if (user) {
     // user authenticated with Firebase
     alert('User ID: ' + user.id + ', Provider: ' + user.provider);
