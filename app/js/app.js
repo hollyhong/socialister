@@ -9,3 +9,17 @@ angular.module('socialister', ['firebase', 'socialister.filters', 'socialister.s
     $routeProvider.when('/filter', {templateUrl: 'partials/filter.html', controller: 'FilterCtrl'});
     $routeProvider.otherwise({redirectTo: '/items'});
   }]);
+
+// instatiate the FirebaseAuthClient and monitor the user's auth state
+var chatRef = new Firebase('https://SampleChat.firebaseIO.com');
+var authClient = new FirebaseAuthClient(chatRef, function(error, user) {
+  if (error) {
+    // an error occurred while attempting login
+    alert(error);
+  } else if (user) {
+    // user authenticated with Firebase
+    alert('User ID: ' + user.id + ', Provider: ' + user.provider);
+  } else {
+    // user is logged out
+  }
+});
