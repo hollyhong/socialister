@@ -21,10 +21,12 @@ angular.module('socialister.controllers', []).
           tags: $scope.newTags
         });
 
-        $scope.newTags.forEach(function(tag) {
-          var tagRef  = new Firebase('https://wfp.firebaseio.com/tags');
-          tagRef.child(tag).child($scope.newItem).set(itemRef.toString());
-        });
+        if ($scope.newTags && $scope.newTags.length) {
+          $scope.newTags.forEach(function(tag) {
+            var tagRef  = new Firebase('https://wfp.firebaseio.com/tags');
+            tagRef.child(tag).child($scope.newItem).set(itemRef.toString());
+          });
+        }
 
         $scope.newItem = '';
         $scope.newTags = '';
@@ -49,15 +51,23 @@ angular.module('socialister.controllers', []).
           item;
         for (i = items.length - 1; i >= 0; i--) {
           item = items[i].text;
-          for (t = items[i]['tags'].length - 1; t >= 0; t--) {
-            tag = items[i]['tags'][t];
-            console.log(item + ':' + tag);
-            if (tags.hasOwnProperty(tag)) {
-              tags[tag].push(item);
+          if (!items[i]['tags']) {
+            if (tags.hasOwnProperty('Untagged')) {
+              tags['Untagged'].push(item);
             }
             else {
-              tags[tag] = [item];
-              console.log(tags);
+              tags['Untagged'] = [item];
+            }
+          }
+          else {
+            for (t = items[i]['tags'].length - 1; t >= 0; t--) {
+              tag = items[i]['tags'][t];
+              if (tags.hasOwnProperty(tag)) {
+                tags[tag].push(item);
+              }
+              else {
+                tags[tag] = [item];
+              }
             }
           }
         }
