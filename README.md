@@ -1,3 +1,3 @@
 # Social Lister
 
-Living at [SociaLister](workforpizza.com/socialister/app).
+Living at [SociaLister]http://(workforpizza.com/socialister/app).
