@@ -4,12 +4,13 @@
   <meta charset="utf-8">
   <title>SociaLister</title>
   <link rel="stylesheet" href="css/app.css"/>
+  <link rel="stylesheet" href="css/zocial.css"/>
 </head>
 <body>
   <div>SociaLister <span app-version></span>
-    <button onclick='authClient.login("facebook");'>Login with Facebook</button>
-    <button onclick='authClient.login("twitter");'>Login with Twitter</button>
-    <button onclick='authClient.login("github");'>Login with Github</button>
+    <button class='zocial facebook' onclick='authClient.login("facebook");'>Login with Facebook</button>
+    <button class='zocial twitter' onclick='authClient.login("twitter");'>Login with Twitter</button>
+    <button class='zocial github' onclick='authClient.login("github");'>Login with Github</button>
   </div>
   <ul class="menu">
     <li><a href="#/something">something</a></li>
