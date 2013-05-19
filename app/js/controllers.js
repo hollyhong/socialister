@@ -2,10 +2,25 @@
 
 /* Controllers */
 
-angular.module('socialister.controllers', []).
-  controller('MyCtrl1', [function() {
-    return;
-  }])
+angular.module('socialister.controllers', [])
+  .controller('LoginCtrl', ['$scope', 'angularFire',
+    function LoginCtrl($scope, angularFire) {
+      var firebaseRef = new Firebase('https://wfp.firebaseio.com');
+      var authClient = new FirebaseAuthClient(firebaseRef, function(error, user) {
+        if (error) {
+          console.log(error);
+        }
+      $scope.user = user;
+      });
+
+      $scope.login = function (service) {
+        authClient.login(service);
+      };
+
+      $scope.logout = function () {
+        authClient.logout();
+      };
+    }])
   .controller('ItemCtrl', ['$scope', 'angularFire',
     function ItemCtrl($scope, angularFire) {
       var url = 'https://wfp.firebaseio.com/items';

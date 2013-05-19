@@ -7,13 +7,17 @@
   <link rel="stylesheet" href="css/zocial.css"/>
 </head>
 <body>
-  <div>SociaLister <span app-version></span>
-    <button class='zocial facebook' onclick='authClient.login("facebook");'>Login with Facebook</button>
-    <button class='zocial twitter' onclick='authClient.login("twitter");'>Login with Twitter</button>
-    <button class='zocial github' onclick='authClient.login("github");'>Login with Github</button>
+  <div ng-controller='LoginCtrl'>SociaLister <span app-version></span>
+    <span ng-hide='user'>
+      <button class='zocial facebook' ng-click='login("facebook");'>Login with Facebook</button>
+      <button class='zocial twitter' ng-click='login("twitter");'>Login with Twitter</button>
+      <button class='zocial github' ng-click='login("github");'>Login with Github</button>
+    </span>
+    <span ng-show='user'>
+      uid: {{user.id}}<button ng-click='logout()'>Logout</button>
+    </span>
   </div>
   <ul class="menu">
-    <li><a href="#/something">something</a></li>
     <li><a href="#/items">items</a></li>
     <li><a href="#/filter">filter</a></li>
   </ul>
