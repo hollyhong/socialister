@@ -3,46 +3,44 @@
 /* Controllers */
 
 angular.module('socialister.controllers', [])
-  .controller('LoginCtrl', ['$scope', 'angularFire',
-    function LoginCtrl($scope, angularFire) {
-      var firebaseRef = new Firebase('https://wfp.firebaseio.com');
-      var authClient = new FirebaseAuthClient(firebaseRef, function(error, user) {
+
+  .controller('MainCtrl', ['$scope', 'angularFire',
+    function MainCtrl($scope, angularFire) {
+      var chatRef = new Firebase('https://wfp.firebaseio.com');
+      var authClient = new FirebaseAuthClient(chatRef, function(error, user) {
         if (error) {
           console.log(error);
+        } else if (user) {
+        } else {
         }
-      $scope.user = user;
+        $scope.user = user;
       });
 
-      $scope.login = function (service) {
-        authClient.login(service);
+      $scope.login = function (provider) {
+        authClient.login(provider);
       };
 
       $scope.logout = function () {
         authClient.logout();
       };
-    }])
-  .controller('ItemCtrl', ['$scope', 'angularFire',
-    function ItemCtrl($scope, angularFire) {
+
       var url = 'https://wfp.firebaseio.com/items';
-      var promiseItems = angularFire(url, $scope, 'items', []);
+      var promise = angularFire(url, $scope, 'items', []);
 
       $scope.addItem = function () {
         if (!$scope.newItem.length) {
           return;
         }
-
         var itemRef = $scope.items.push({
           text: $scope.newItem,
           tags: $scope.newTags
         });
-
         if ($scope.newTags && $scope.newTags.length) {
           $scope.newTags.forEach(function(tag) {
             var tagRef  = new Firebase('https://wfp.firebaseio.com/tags');
             tagRef.child(tag).child($scope.newItem).set(itemRef.toString());
           });
         }
-
         $scope.newItem = '';
         $scope.newTags = '';
       };
@@ -51,22 +49,15 @@ angular.module('socialister.controllers', [])
         $scope.items.splice($scope.items.indexOf(item), 1);
       };
 
-    }
-  ])
-  .controller('FilterCtrl', ['$scope', 'angularFire',
-    function FilterCtrl($scope, angularFire) {
-      var url = 'https://wfp.firebaseio.com/items';
-      var promise = angularFire(url, $scope, 'items', []);
       promise.then(function() {
-        var items = $scope.items,
-          tags = {},
+        var tags = {},
           i,
           t,
           tag,
           item;
-        for (i = items.length - 1; i >= 0; i--) {
-          item = items[i].text;
-          if (!items[i]['tags']) {
+        for (i = $scope.items.length - 1; i >= 0; i--) {
+          item = $scope.items[i].text;
+          if (!$scope.items[i]['tags']) {
             if (tags.hasOwnProperty('Untagged')) {
               tags['Untagged'].push(item);
             }
@@ -75,8 +66,8 @@ angular.module('socialister.controllers', [])
             }
           }
           else {
-            for (t = items[i]['tags'].length - 1; t >= 0; t--) {
-              tag = items[i]['tags'][t];
+            for (t = $scope.items[i]['tags'].length - 1; t >= 0; t--) {
+              tag = $scope.items[i]['tags'][t];
               if (tags.hasOwnProperty(tag)) {
                 tags[tag].push(item);
               }
@@ -86,9 +77,8 @@ angular.module('socialister.controllers', [])
             }
           }
         }
-        $scope.items = items;
         $scope.tags = tags;
       });
     }
-  ])
-;
+  ]);
+
