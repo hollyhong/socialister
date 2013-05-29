@@ -1,5 +1,77 @@
 /* app css stylesheet */
 
+body {
+ font-family: 'Montserrat', sans-serif;
+ letter-spacing:-1px;
+ background-color: #F7F9F8;
+ padding-left: 0;
+ padding-right: 0;
+}
+
+header{
+  background-color: #1ABC9C;
+  height: 5px;
+  margin:0;
+  padding: 0;
+}
+
+.module {
+  padding: 1em;
+}
+
+.logo{
+  margin: 2em 0;
+}
+
+.login-buttons > button {
+  margin: 0.25em;
+}
+
+.navbar-inner {
+  background:#1ABC9C;
+  background-image: none;
+  padding: 0;
+}
+
+.navbar-inner > .brand{
+  color: #fff;
+  padding:; 0;
+}
+
+.list {
+  margin: 1em 0;
+}
+
+.list-item {
+  margin: 0.5em 0;
+  -webkit-box-shadow:  0px 0px 5px 3px rgba(0, 0, 0, 0.1); 
+  box-shadow:  0px 0px 5px 3px rgba(0, 0, 0, 0.1);
+}
+
+.list-item p {
+  color: #888;
+}
+
+/*-----------TYPE----------*/
+.tagline {
+  color:#999;
+  font-weight: 100;
+  margin-bottom: 1em;
+}
+
+.list-item h4{
+  color:#17846E;
+  margin-bottom: 0;
+}
+
+.list-item .from {
+  color: #CECEBF;
+}
+
+.list-item .tags {
+  color: #ACAC9D;
+}
+
 .menu {
   list-style: none;
   border-bottom: 0.1em solid black;

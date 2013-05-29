@@ -1,12 +1,34 @@
-<ul ng-controller="MainCtrl">
-  <form id='item-list' ng-submit='addItem()'>
-    Item: <input id='new-item' ng-model='newItem' autofocus>
-    <p>Tags: <input ng-list ng-model='newTags'</p>
-    <input class="" type="submit" value="add">
-  </form>
-  <li ng-repeat="item in items">
-    <input ng-model='item.text'>
-    <input ng-list ng-model='item.tags'>
-    <button class="" ng-click='rmItem(item)'>rm</button>
-  </li>
-</ul>
+<div class="container">
+  <h1>Add to a List</h1>
+  <ul ng-controller="MainCtrl" class="unstyled">
+    <form class="form-horizontal well well-small" id='item-list' ng-submit='addItem()'>
+      <div class="control-group">
+        <label class="control-label">Item:</label>
+        <div class="controls">
+          <input type="text" class="span6" id='new-item' ng-model='newItem' autofocus >
+        </div>
+      </div><!--end control group-->
+      <div class="control-group">
+        <label class="control-label">Tags:</label>
+        <div class="controls">
+          <input type="text" class="span6" ng-list ng-model='newTags'</p>
+          <input class="btn btn-info btn-small" type="submit" value="Add">
+        </div>
+      </div><!--end control group-->
+    </form>
+
+    <div class="row">
+      <li ng-repeat="item in items">
+        <div class="span6">
+          <input type="text" class="input-xlarge" ng-model='item.text'>
+        </div>
+        <div class="span5">
+          <input type="text" class="input-xlarge" ng-list ng-model='item.tags'>
+        </div>
+        <div class="span1">
+          <button class="btn btn-small" ng-click='rmItem(item)'><i class="icon-remove"></i></button>
+        </div>
+      </li>
+    </div>
+  </ul>
+</div>

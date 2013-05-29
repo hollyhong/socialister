@@ -1,10 +1,22 @@
-<div ng-controller="MainCtrl">
-  <p>Filter: <input ng-model='filterText'></p>
-  <ul>
-    <li ng-repeat='(tag, items) in tags'>{{tag}}
-      <ul>
-        <li ng-repeat='item in items | filter:filterText'>{{item}}</li>
-      </ul>
-    </li>
-  </ul>
-</div>
+<div class="container">
+	<ul class="nav pull-right">
+        <li><a href="#/items" class="btn btn-mini"><i class="icon-plus"></i> Recommend</a></li>
+    </ul>
+	<div ng-controller="MainCtrl">
+
+		<p class="well well-small">Filter: <input ng-model='filterText'></p>
+	
+		<div class="list" ng-repeat='(tag, items) in tags'>{{tag}}
+	  		<div class="list-item" ng-repeat='item in items | filter:filterText'>
+	  			<p>{{item}}</p>
+	  		</div>
+	  	</div>
+	  	<!--<ul>
+		    <li ng-repeat='(tag, items) in tags'>{{tag}}
+		      <ul>
+		        <li ng-repeat='item in items | filter:filterText'>{{item}}</li>
+		      </ul>
+		    </li>
+	  	</ul>-->	
+	</div><!--/controller-->
+</div> <!--/container-->

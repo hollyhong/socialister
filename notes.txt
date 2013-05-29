@@ -1,0 +1,4 @@
+cd Sites/socialister/app
+python -m SimpleHTTPServer
+
+# http://localhost:8000

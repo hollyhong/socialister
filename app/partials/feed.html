@@ -1,0 +1,18 @@
+<div class="container">
+	<ul class="nav pull-right">
+        <li><a href="#/items" class="btn btn-mini"><i class="icon-plus"></i> Recommend</a></li>
+    </ul>
+
+    <br/>
+
+	<div class="list" ng-repeat='(tag, items) in tags'>
+	  	<div class="list-item" ng-repeat='item in items | filter:filterText'>
+	  		<div class="module">
+	  			<h4>{{item}}</h4>
+	  			<p class="from">from Holly</p>
+	  			<p class="tags">{{tag}}</p>
+	  		</div>
+	  	</div>
+	</div>
+
+</div> <!--/container-->

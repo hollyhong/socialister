@@ -3,26 +3,31 @@
 <head>
   <meta charset="utf-8">
   <title>SociaLister</title>
+  <link href="//netdna.bootstrapcdn.com/twitter-bootstrap/2.3.2/css/bootstrap-combined.min.css" rel="stylesheet">
+  <link href="//netdna.bootstrapcdn.com/twitter-bootstrap/2.3.1/css/bootstrap-combined.no-icons.min.css" rel="stylesheet">
+  <link href="//netdna.bootstrapcdn.com/font-awesome/3.1.1/css/font-awesome.css" rel="stylesheet">
+  <link href='http://fonts.googleapis.com/css?family=Montserrat' rel='stylesheet' type='text/css'>  
   <link rel="stylesheet" href="css/app.css"/>
-  <link rel="stylesheet" href="css/zocial.css"/>
 </head>
 <body>
-  <div ng-controller='MainCtrl'>SociaLister <span app-version></span>
-    <span ng-hide='user'>
-      <button class='zocial facebook' ng-click='login("facebook");'>Login with Facebook</button>
-      <button class='zocial twitter' ng-click='login("twitter");'>Login with Twitter</button>
-      <button class='zocial github' ng-click='login("github");'>Login with Github</button>
-    </span>
-    <span ng-show='user'>
-      uid: {{user.id}}<button ng-click='logout()'>Logout</button>
-    </span>
+  <div class="navbar">
+    <div class="navbar-inner">
+      <a class="brand pull-left" href="#">SociaLister <span app-version></span></a> 
+      <ul class="nav pull-right">
+        <!--<li><a href="#/something">Something</a></li>-->
+        <li><a href="#">Hi Henri</a></li>
+        <!--<li><a href="#/filter">My Lists</a></li>-->
+      </ul>
+       <!--<div class="pull-right">
+       <button class="btn" onclick='authClient.login("twitter");'><i class="icon-twitter"></i> Login with Twitter</button>
+        <button class="btn" onclick='authClient.login("facebook");'><i class="icon-facebook"></i> Login with Facebook</button>-->        
+      </div>
+    </div>
   </div>
-  <ul class="menu">
-    <li><a href="#/items">items</a></li>
-    <li><a href="#/filter">filter</a></li>
-  </ul>
 
-  <div ng-view></div>
+  <div class="module">
+    <div ng-view></div>
+  </div>
 
   <script type='text/javascript' src='https://cdn.firebase.com/v0/firebase.js'></script>
   <script type='text/javascript' src='https://cdn.firebase.com/v0/firebase-auth-client.js'></script>
