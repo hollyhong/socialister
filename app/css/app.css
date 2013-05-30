@@ -31,11 +31,18 @@ header{
   background:#1ABC9C;
   background-image: none;
   padding: 0;
+  text-shadow:none;
 }
 
 .navbar-inner > .brand{
   color: #fff;
-  padding:; 0;
+  padding: 0.5em 0 0 1.5em;
+  text-shadow: 1px 1px #3E9F81;
+}
+
+.navbar .nav>li>a {
+  color: #fff;
+  text-shadow: 1px 1px #3E9F81;
 }
 
 .list {
