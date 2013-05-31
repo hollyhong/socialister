@@ -6,6 +6,7 @@ body {
  background-color: #F7F9F8;
  padding-left: 0;
  padding-right: 0;
+ background-color: #F8F7F3;
 }
 
 header{
@@ -15,9 +16,18 @@ header{
   padding: 0;
 }
 
+/*Use to pad the contents inside a container*/
 .module {
   padding: 1em;
 }
+
+/*Use to remove the left and right padding on a bootstrap container*/
+.nopad {
+  padding: right: 0;
+  padding-left: 0;
+}
+
+/*Login*/
 
 .logo{
   margin: 2em 0;
@@ -27,32 +37,31 @@ header{
   margin: 0.25em;
 }
 
+/*NavBar*/
 .navbar-inner {
   background:#1ABC9C;
   background-image: none;
-  padding: 0;
   text-shadow:none;
 }
 
-.navbar-inner > .brand{
-  color: #fff;
-  padding: 0.5em 0 0 1.5em;
-  text-shadow: 1px 1px #3E9F81;
-}
-
-.navbar .nav>li>a {
+.navbar-inner a.brand {
   color: #fff;
   text-shadow: 1px 1px #3E9F81;
 }
 
-.list {
-  margin: 1em 0;
+.navbar .nav li a {
+  color: #fff;
+  text-shadow: 1px 1px #3E9F81;
 }
+
+/*Your List*/
 
 .list-item {
   margin: 0.5em 0;
-  -webkit-box-shadow:  0px 0px 5px 3px rgba(0, 0, 0, 0.1); 
-  box-shadow:  0px 0px 5px 3px rgba(0, 0, 0, 0.1);
+  background-color: #FFF;
+  -webkit-box-shadow:  0px 8px 6px -6px rgba(0, 0, 0, 0.1); 
+  box-shadow:  0px 8px 6px -6px rgba(0, 0, 0, 0.1);
+  border: 1px solid #e4e4e4;
 }
 
 .list-item p {

@@ -12,22 +12,25 @@
 <body>
   <div class="navbar">
     <div class="navbar-inner">
-      <a class="brand pull-left" href="#">SociaLister <span app-version></span></a> 
-      <ul class="nav pull-right">
-        <!--<li><a href="#/something">Something</a></li>-->
-        <li><a href="#">Hi Henri</a></li>
-        <!--<li><a href="#/filter">My Lists</a></li>-->
-      </ul>
-       <!--<div class="pull-right">
-       <button class="btn" onclick='authClient.login("twitter");'><i class="icon-twitter"></i> Login with Twitter</button>
-        <button class="btn" onclick='authClient.login("facebook");'><i class="icon-facebook"></i> Login with Facebook</button>-->        
+      <div class="container">
+          <button type="button" class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>        
+          <a class="brand" href="#/feed">SociaLister <span app-version></span></a> 
+          <div class="nav-collapse collapse">
+            <ul class="nav">
+              <li><a href="#/feed">My Lists</a></li>
+              <li><a href="#/suggest">Suggest</a></li>
+              <li><a href="#">Hi Henri</a></li>
+            </ul>
+          </div><!--/.nav-collapse-->      
       </div>
     </div>
   </div>
 
-  <div class="module">
     <div ng-view></div>
-  </div>
 
   <script type='text/javascript' src='https://cdn.firebase.com/v0/firebase.js'></script>
   <script type='text/javascript' src='https://cdn.firebase.com/v0/firebase-auth-client.js'></script>
@@ -38,5 +41,7 @@
   <script src="js/controllers.js"></script>
   <script src="js/filters.js"></script>
   <script src="js/directives.js"></script>
+  <script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.0/jquery.min.js"></script>  
+  <script src="//netdna.bootstrapcdn.com/twitter-bootstrap/2.3.2/js/bootstrap.min.js"></script>
 </body>
 </html>

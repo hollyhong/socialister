@@ -8,5 +8,7 @@ angular.module('socialister', ['firebase', 'socialister.filters', 'socialister.s
     $routeProvider.when('/filter', {templateUrl: 'partials/filter.html', controller: 'MainCtrl'});
     $routeProvider.when('/feed', {templateUrl: 'partials/feed.html', controller: 'MainCtrl'});
     $routeProvider.when('/login', {templateUrl: 'partials/login.html', controller: 'MainCtrl'});
+    $routeProvider.when('/send', {templateUrl: 'partials/send.html', controller: 'MainCtrl'});
+    $routeProvider.when('/suggest', {templateUrl: 'partials/suggest.html', controller: 'MainCtrl'});
     $routeProvider.otherwise({redirectTo: '/items'});
   }]);
