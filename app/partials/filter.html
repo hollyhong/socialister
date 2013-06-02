@@ -1,14 +1,13 @@
-<div class="container">
-	<ul class="nav pull-right">
-        <li><a href="#/items" class="btn btn-mini"><i class="icon-plus"></i> Recommend</a></li>
-    </ul>
-	<div ng-controller="MainCtrl">
+<div class="container nopad" ng-controller="MainCtrl">
 
 		<p class="well well-small">Filter: <input ng-model='filterText'></p>
 	
-		<div class="list" ng-repeat='(tag, items) in tags'>{{tag}}
+		<div class="list" ng-repeat='(tag, items) in tags'><span class="category">{{tag}}</span>
 	  		<div class="list-item" ng-repeat='item in items | filter:filterText'>
-	  			<p>{{item}}</p>
+	  			<div class="module">
+	  				<p>{{item}}</p>
+	  				<p class="from">from Holly</p>
+	  			</div>
 	  		</div>
 	  	</div>
 	  	<!--<ul>
@@ -18,5 +17,4 @@
 		      </ul>
 		    </li>
 	  	</ul>-->	
-	</div><!--/controller-->
 </div> <!--/container-->

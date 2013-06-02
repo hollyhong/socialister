@@ -1,5 +1,7 @@
 <div class="container nopad">
-
+	<div class="list-header">
+		<h2>List Feed</h2>
+	</div>
 	<div class="list" ng-repeat='(tag, items) in tags'>
 	  	<div class="list-item" ng-repeat='item in items | filter:filterText'>
 	  		<div class="module">

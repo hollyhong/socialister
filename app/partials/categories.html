@@ -1,0 +1,7 @@
+<div class="container nopad" ng-controller="MainCtrl">
+	<div class="list-header">
+		<h2>Lists</h2>
+	</div>
+	<ul ng-repeat='(tag, items) in tags' class="nav nav-tabs nav-stacked">
+		<li><a href="#/list">{{tag}}<i class="icon-chevron-right pull-right"></i></a></li>
+	</ul>

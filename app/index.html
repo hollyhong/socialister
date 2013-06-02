@@ -21,9 +21,20 @@
           <a class="brand" href="#/feed">SociaLister <span app-version></span></a> 
           <div class="nav-collapse collapse">
             <ul class="nav">
-              <li><a href="#/feed">My Lists</a></li>
+                <li class="dropdown">
+                  <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                    Lists
+                    <b class="caret"></b>
+                  </a>
+                  <ul class="dropdown-menu">
+                    <li><a href="#/filter">By Category 1</a></li>
+                    <li><a href="#/categories">By Category 2</a></li>
+                    <li><a href="#/feed">Feed</a></li>
+                  </ul>
+                </li>
               <li><a href="#/suggest">Suggest</a></li>
               <li><a href="#">Hi Henri</a></li>
+              <li><a href="#/login">Logout</a></li>
             </ul>
           </div><!--/.nav-collapse-->      
       </div>
